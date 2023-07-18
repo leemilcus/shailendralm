@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    Shailendra Photography
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100,200;300,400;600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/lightbox.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-----------------------------------CSS begin------------------------------>
+  <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height:100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(images/gallery\ 013.jpg);
+}
+
+.header{
+    min-height: 25vh; 
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 180px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative; 
+}
+
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width:100%;
+}
+
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    border: solid 1px;
+    color: #ffffff;
+    padding: 12px 34px;
+    font-size: 14px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover{
+    border: 1px solid #ffffff;
+    background: rgb(155, 0, 0) ;
+    transition:1s;
+}
+
+nav .fa{
+    display: none;
+}
+
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+
+    .nav-links ul li{
+        display: block;
+    }
+
+    .nav-links{
+        position:fixed;
+        background: #080808;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    nav .fa{
+        display: block;
+        color: rgb(240, 240, 240);
+        margin: 10px; 
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+
+/*--------body-------------*/
+.container {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.container  header{
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight:bold;
+    text-align: center;
+
+}
+.container h4{
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+
+.container .form{
+    margin-top: 30px;
+}
+
+.form .input-box{
+    width: 100%;
+    margin-top: 20px;
+} 
+
+.input-box label{
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.form .input-box input{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.input-box input:focus{
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .column{
+    display: flex;
+    column-gap: 15px;
+}
+ button{
+    width: 50%;
+    padding: 1.4rem;
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    color: white;
+    font-weight: bolder;
+}
+ 
+.input-box textarea{
+    position: relative;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.form button{
+    height: 50px;
+    width: 30%;
+    font-size: 1.2rem;
+    border: none;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 0.4rem;
+    background: rgb(0, 0, 0);
+    color: white;
+    font-weight: bolder;
+
+}
+
+.form button:hover{
+    border: 1px solid #ffffff;
+    background: rgb(255, 157, 0) ;
+    transition:all 0.5s ease;
+    color: white;
+}
+/*------Responsive -----*/
+
+@media screen and (max-width: 500px) {
+    .form .column{
+        flex-wrap: wrap;
+    }
+}
+/*------- Footer begin------*/
+
+.booking-footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.booking-footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 13;
+}
+.booking-footer p{
+    color: #fff;
+}
+
+.icons .fa{
+    color: #fab800;
+    margin: 0 13px ;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.booking-footer a{
+    color: #767676;
+}
+
+/*------- Footer ends------*/
+
+
+  </style>
+   <script src="js/lightbox-plus-jquery.js"></script>
+</head>
+ 
+<body onload="showModal()">
+        <section class="header">
+            <nav>
+                <a href="index.html"><img src="images/SHAILENDRA PHOGRAPHY.png" alt="logo"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.shailendralm.html">About</a></li>
+                        <li><a href="gallery.shailendralm.html">Gallery</a></li>
+                        <li><a href="services.shailendralm.html">Services</a></li>
+                        <li><a href="contact.shailendralm.html">Contact</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+    </section>
+    <!-- header section ends -->
+ 
+<section class="container">
+      <header>Book Your Photo Shoot Here</header>
+      <h4>One of our agents will get in contact with you as soon as possible.<br>
+         Please note, there is a <strong>36% Call-Out Fee Deposit Required</strong> before any shoot is confirmed.</h4>
+        <form action="https://formspree.io/f/xjvqbnlw" method="POST">
+            <div class="input-box">
+                <label> </label>
+                <input type="text" placeholder="Enter Full Name" required/>
+            </div>
+            <div class="input-box">
+                <label></label>
+                <input type="text" placeholder="Email Address" required/>
+            </div>
+            
+            <div class="column">
+                <div class="input-box">
+                    <label></label>
+                    <input type="text" placeholder="Phone Number" required/>
+                </div>
+                <div class="input-box">
+                    <label></label>
+                    <input type="date" placeholder="Email Address" required/>
+                </div>
+            </div>
+            <div class="input-box">
+                <textarea type="text" rows="6" placeholder="Describe your desired photo shoot here" required></textarea>
+            </div>
+ 
+            <button>Submit</button>
+           
+        </form>                
+ </section>
+    <!--------footer begin--------->
+    <section class="booking-footer">
+        <h4> About Us</h4>
+        <p><strong>Shailendra Photography</strong> is a photography division <br>
+            of <strong>DAM GLOBAL HOLDINGS (PTY) LTD</strong>,that specializes in  <br>
+            portrait, events, and lifestyle photography<br>
+            for individuals, couples and businesses.</p>
+            <div class="icons">
+                <a href="https://www.instagram.com/shailendralm/" target="_blank">
+                <i class="fa fa-instagram" ></i></a>
+                <a href="https://www.facebook.com/shailendralm" target="_blank">
+                    <i class="fa fa-facebook"></i></a>
+                <a href="https://za.pinterest.com/leemilcus/" target="_blank">
+                    <i class="fa fa-pinterest"></i></a>
+                <a href=" https://www.behance.net/leemilcusuiverse" target="_blank">
+                    <i class="fa fa-behance"></i></a>
+      
+            </div>
+            <a href="policy.shailendralm.html"> Privacy Policy |  Cookie Consent  | Terms of use </a>
+    
+            <p> © 2023 DAM GLOBAL HOLDINGS (PTY) LTD. ALL RIGHTS RESERVED.</p>
+    </section>
+    <!--------footer end--------->
+    
+    <!--------JavaScript for Toggle Menu--------->
+    <script> 
+    
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right ="0";
+        }
+        function hideMenu(){
+            navLinks.style.right ="-200px";
+        }
+    
+    </script>
+    </body>
+    </html>
